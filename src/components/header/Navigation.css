@@ -1,0 +1,10 @@
+.navigation{
+    border: 1px solid black;
+
+}
+
+.navigation .nav_item{
+    display: inline;
+    color: black;
+    /* border: 1px solid black; */
+}

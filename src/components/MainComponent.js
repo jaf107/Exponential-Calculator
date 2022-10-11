@@ -1,10 +1,12 @@
 import React from "react";
-import Calculator from "./Calculator";
+import Body from "./body/Body";
+import Header from "./header/Header";
 
 const MainComponent = () => {
   return (
     <div className="m-5 ">
-      <Calculator />
+      <Header />
+      <Body />
     </div>
   );
 };

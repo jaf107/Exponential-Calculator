@@ -1,0 +1,17 @@
+.header{
+    margin: 10px;
+}
+
+.header .header_top{
+    padding: 20px;
+    border: 1px solid black;
+}
+#header_tag{
+    display: inline;
+    /* border: 1px solid red; */
+}
+
+#admin_btn{
+    margin: 10px;
+    margin-left: 80%;
+}
