@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-
+import Col from "react-bootstrap/esm/Col";
+import Container from "react-bootstrap/esm/Container";
+import Row from "react-bootstrap/esm/Row";
+import "./Calculator.css";
 const Calculator = () => {
   const [base, setBase] = useState(0);
   const [power, setPower] = useState(0);
@@ -29,25 +32,47 @@ const Calculator = () => {
           The values of power should be within 0 to 10.
         </p>
         <p>Where 'b' is the base and 'p' is the power.</p>
-        {/* <h3>Exponential Calculator</h3> */}b :<span> </span>{" "}
-        <input
-          className="mb-3 "
-          value={base}
-          onChange={(e) => setBase(e.target.value)}
-        ></input>{" "}
-        <span> "1 &lt;= b &lt;= 10 " </span> <br />p :<span> </span>{" "}
-        <input
-          value={power}
-          className="mb-3 "
-          onChange={(e) => setPower(e.target.value)}
-        ></input>{" "}
-        <span> "0 &lt;= p &lt;= 10 " </span> <br /> <br />
-        <button type="submit" onClick={addValue} className="btn btn-primary">
-          Calculate
-        </button>
+        <Container>
+          <Row>
+            <Col xs={1}>b :</Col>
+            <Col>
+              <input
+                className="mb-3 form-control "
+                value={base}
+                onChange={(e) => setBase(e.target.value)}
+              ></input>{" "}
+            </Col>
+            <Col>
+              <span> "1 &lt;= b &lt;= 10 " </span>
+            </Col>
+          </Row>
+        </Container>
+        <Container>
+          <Row>
+            <Col xs={1}> p :</Col>
+            <Col>
+              <input
+                value={power}
+                className="mb-3 form-control"
+                onChange={(e) => setPower(e.target.value)}
+              ></input>
+            </Col>
+            <Col>
+              <span> "0 &lt;= p &lt;= 10 " </span> <br /> <br />
+            </Col>
+          </Row>
+        </Container>{" "}
+        <div className="calculator_middle">
+          <button
+            type="submit"
+            onClick={addValue}
+            className="btn btn-primary calculateBtn"
+          >
+            Calculate
+          </button>
+        </div>
         <h3 className="m-3 ">Value : {ans}</h3>
       </div>
-      s
     </div>
   );
 };

@@ -1,0 +1,7 @@
+.calculator_middle {
+  display: flex;
+}
+
+.calculateBtn {
+  margin: auto;
+}

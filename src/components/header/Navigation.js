@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Navigation.css";
 import { Collapse, Nav, Navbar, NavItem } from "reactstrap";
 import { Link } from "react-router-dom";
