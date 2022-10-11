@@ -10,13 +10,17 @@ const CalenderValidator = () => {
   const [year, setYear] = useState("");
   const [ans, setAns] = useState(false);
 
-  function isLeapYear(yr) {
-    return yr % 400 === 0 || (yr % 100 !== 0 && yr % 4 === 0);
+  function isLeapYear(year) {
+    return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0;
   }
-  function validDay() {
+  function validDay(day, month, year) {
     if (day >= 1) {
       if (month.toLowerCase() === "feb" || month.toLowerCase() === "february") {
-        if (day === 29 && isLeapYear(year)) return true;
+        if (parseInt(day) === 29 && isLeapYear(year)) {
+          // console.log(day, month, year);
+          // console.log("LEAP YEAR");
+          return true;
+        }
         if (day <= 28) return true;
       }
       if (
@@ -54,7 +58,7 @@ const CalenderValidator = () => {
     return false;
   }
 
-  function validMonth() {
+  function validMonth(month) {
     if (
       month.toLowerCase() === "jan" ||
       month.toLowerCase() === "january" ||
@@ -83,7 +87,7 @@ const CalenderValidator = () => {
       return true;
     return false;
   }
-  function validYear() {
+  function validYear(year) {
     if (year > 1980 && year < 2022) {
       return true;
     }
@@ -92,15 +96,15 @@ const CalenderValidator = () => {
 
   function validateDate() {
     // console.log(day, month, year);
-    if (validDay(day) && validMonth(month) && validYear(year)) {
+    if (validDay(day, month, year) && validMonth(month) && validYear(year)) {
       setAns("Valid");
     } else {
       setAns("Invalid");
     }
 
-    setDay("");
-    setMonth("");
-    setYear("");
+    // setDay("");
+    // setMonth("");
+    // setYear("");
   }
 
   return (
