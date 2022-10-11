@@ -1,38 +1,47 @@
 import React, { useState } from "react";
 
 const Calculator = () => {
-  const [var1, setVar1] = useState(0);
-  const [var2, setVar2] = useState(0);
+  const [base, setBase] = useState(0);
+  const [power, setPower] = useState(0);
   const [ans, setAns] = useState(0);
 
   function addValue() {
-    let ans = parseInt(var1) ** parseInt(var2);
-    if (ans > 9999) {
+    let ans = parseInt(base) ** parseInt(power);
+    if (base < 1 || base > 10) {
+      // alert("Input b correctly");
       setAns("error");
+    } else if (power < 0 || power > 10) {
+      // alert("Input a correctly");
+      setAns("error");
+    } else {
+      setAns(ans);
     }
-    setAns(ans);
   }
   return (
     <div>
       <div className="container">
         <h1>Exponential Calculator</h1>
         <p>
-          Our Calculator can Calculate an Exponential value for b<sup>a</sup>.
+          Our Calculator can Calculate an Exponential value for b<sup>p</sup>.
+          <br /> <br />
+          The values of base should be within 1 to 10.
+          <br />
+          The values of power should be within 0 to 10.
         </p>
-        <p>Where 'b' is the base and 'a' is the power</p>
+        <p>Where 'b' is the base and 'p' is the power.</p>
         {/* <h3>Exponential Calculator</h3> */}b :<span> </span>{" "}
         <input
           className="mb-3 "
-          value={var1}
-          onChange={(e) => setVar1(e.target.value)}
+          value={base}
+          onChange={(e) => setBase(e.target.value)}
         ></input>{" "}
-        <span> "0 &lt; b &lt; 5 " </span> <br />a :<span> </span>{" "}
+        <span> "1 &lt;= b &lt;= 10 " </span> <br />p :<span> </span>{" "}
         <input
-          value={var2}
+          value={power}
           className="mb-3 "
-          onChange={(e) => setVar2(e.target.value)}
+          onChange={(e) => setPower(e.target.value)}
         ></input>{" "}
-        <span> "0 &lt; a &lt; 10 " </span> <br /> <br />
+        <span> "0 &lt;= p &lt;= 10 " </span> <br /> <br />
         <button type="submit" onClick={addValue} className="btn btn-primary">
           Calculate
         </button>
