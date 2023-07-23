@@ -1,3 +1,5 @@
+This project is for the course of Software Testing and Quality Assurance. Here, we do testing Selenium Tool
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
